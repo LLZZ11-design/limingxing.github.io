@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover" />
+  <meta name="format-detection" content="telephone=no" />
+  <title>冲鸭兼职</title>
+  <script>
+    (function () {
+      var DESIGN_WIDTH = 375;
+      var PHONE_MAX = 430;
+      var DESKTOP_MIN = 480;
+      var ticking = false;
+      function currentWidth() {
+        return document.documentElement.clientWidth || window.innerWidth || DESIGN_WIDTH;
+      }
+      function fit() {
+        var vw = currentWidth();
+        var isDesktop = vw >= DESKTOP_MIN;
+        var minSide = isDesktop ? 24 : 0;
+        var visualWidth = isDesktop
+          ? Math.min(PHONE_MAX, Math.max(DESIGN_WIDTH, vw - minSide * 2))
+          : vw;
+        var side = Math.max(minSide, (vw - visualWidth) / 2);
+        var root = document.documentElement.style;
+        root.setProperty("--h5-scale", String(visualWidth / DESIGN_WIDTH));
+        root.setProperty("--h5-side", side + "px");
+      }
+      function onResize() {
+        if (ticking) return;
+        ticking = true;
+        requestAnimationFrame(function () {
+          ticking = false;
+          fit();
+        });
+      }
+      fit();
+      window.addEventListener("resize", onResize, { passive: true });
+      window.addEventListener("orientationchange", function () {
+        setTimeout(fit, 80);
+      });
+      if (window.visualViewport) {
+        window.visualViewport.addEventListener("resize", onResize, { passive: true });
+      }
+    })();
+  </script>
+  <link rel="preload" as="image" type="image/webp" href="assets/duck-hero.webp?v=opt1" fetchpriority="high" />
+  <link rel="preload" as="image" type="image/webp" href="assets/title-chongya.webp?v=opt1" />
+  <link rel="stylesheet" href="styles.css?v=home67" />
+</head>
+<body class="home-body">
+  <div class="h5-stage">
+    <div class="phone list-phone">
+      <div class="phone-scroll">
+        <header class="home-hero">
+          <h1 class="home-title">
+            <picture>
+              <source type="image/webp" srcset="assets/title-chongya.webp?v=opt1" />
+              <img src="assets/title-chongya.png?v=opt1" alt="冲鸭兼职" width="750" height="238" fetchpriority="high" decoding="async" />
+            </picture>
+          </h1>
+          <p class="home-sub">诚邀各位加入 · 轻松赚钱 · 日结到账</p>
+          <picture>
+            <source type="image/webp" srcset="assets/duck-hero.webp?v=opt1" />
+            <img
+              class="home-mascot"
+              src="assets/duck-hero.png?v=opt1"
+              alt="冲鸭兼职吉祥物"
+              width="900"
+              height="954"
+              fetchpriority="high"
+              decoding="async"
+            />
+          </picture>
+        </header>
+
+        <main class="home-blocks">
+          <section class="home-card home-card-steps">
+            <h2 class="home-card-title">
+              <i class="home-card-bar" aria-hidden="true"></i>
+              三步轻松赚零花
+            </h2>
+            <div class="home-step-boxes">
+              <picture class="home-step-icon home-step-icon-1">
+                <source type="image/webp" srcset="assets/duck-bust-coin.webp?v=opt1" />
+                <img src="assets/duck-bust-coin.png?v=opt1" alt="" width="192" height="191" decoding="async" />
+              </picture>
+              <picture class="home-step-icon home-step-icon-2">
+                <source type="image/webp" srcset="assets/duck-bust-clipboard.webp?v=opt1" />
+                <img src="assets/duck-bust-clipboard.png?v=opt1" alt="" width="149" height="192" decoding="async" />
+              </picture>
+              <picture class="home-step-icon home-step-icon-3">
+                <source type="image/webp" srcset="assets/duck-bust-hongbao.webp?v=opt1" />
+                <img src="assets/duck-bust-hongbao.png?v=opt1" alt="" width="138" height="192" decoding="async" />
+              </picture>
+              <div class="home-step-box">
+                <strong>注册领新手任务</strong>
+                <span>手机号30秒注册</span>
+              </div>
+              <span class="home-step-arrow" aria-hidden="true"></span>
+              <div class="home-step-box">
+                <strong>做任务赚赏金</strong>
+                <span>悬赏简单随时做</span>
+              </div>
+              <span class="home-step-arrow" aria-hidden="true"></span>
+              <div class="home-step-box">
+                <strong>满10元可提现</strong>
+                <span>微信/支付宝到账</span>
+              </div>
+            </div>
+          </section>
+
+          <section class="home-card home-checkin" aria-label="连续签到领红包，签到7天领取28元">
+            <h2 class="home-checkin-copy">
+              <i class="home-checkin-bar" aria-hidden="true"></i>
+              <span class="home-checkin-lines">
+                <span class="home-checkin-lead">连续签到领红包</span>
+                <span>签到7天</span>
+                <span>领取<em>28元</em></span>
+                <span class="home-checkin-sub">连签满7天 红包直接到账</span>
+              </span>
+            </h2>
+            <picture>
+              <source type="image/webp" srcset="assets/checkin-art.webp?v=opt1" />
+              <img class="home-checkin-art" src="assets/checkin-art.png?v=opt1" alt="" width="560" height="535" loading="lazy" decoding="async" fetchpriority="low" />
+            </picture>
+          </section>
+
+          <section class="home-card home-card-withdraw" aria-label="平台真实运营，满10元即可提现">
+            <picture>
+              <source type="image/webp" srcset="assets/withdraw-art.webp?v=opt1" />
+              <img class="home-withdraw-art" src="assets/withdraw-art.png?v=opt1" alt="" width="415" height="540" loading="lazy" decoding="async" fetchpriority="low" />
+            </picture>
+            <div class="home-withdraw-copy">
+              <h2 class="home-withdraw-title">平台真实运营<br />满10元即可提现</h2>
+              <p class="home-withdraw-desc">真实任务，赏金明白，提现到账</p>
+              <div class="home-withdraw-pills">
+                <span>满¥10 提现</span>
+                <span>真到账</span>
+              </div>
+            </div>
+          </section>
+
+          <section class="home-card home-card-wheel" aria-label="幸运转盘">
+            <div class="home-wheel-copy">
+              <h2 class="home-wheel-title">幸运转盘</h2>
+              <p class="home-wheel-desc">抽中现金直接进钱包，可随时提现</p>
+              <div class="home-wheel-prize">
+                <span class="home-wheel-tag">最高奖</span>
+                <p class="home-wheel-amount"><em>¥</em>188</p>
+              </div>
+              <div class="home-wheel-actions">
+                <span class="home-wheel-btn-line">邀请好友得次数</span>
+              </div>
+            </div>
+            <picture>
+              <source type="image/webp" srcset="assets/wheel-art.webp?v=opt1" />
+              <img class="home-wheel-art" src="assets/wheel-art.png?v=opt1" alt="" width="516" height="540" loading="lazy" decoding="async" fetchpriority="low" />
+            </picture>
+          </section>
+
+          <section class="home-card home-card-pool" aria-label="当前全站任务赏金池">
+            <div class="home-pool-copy">
+              <h2 class="home-pool-title">当前全站任务赏金池</h2>
+              <p class="home-pool-amount"><em>¥</em>5877</p>
+              <p class="home-pool-desc">任务真实 悬赏简单 手机可做</p>
+              <div class="home-pool-pills">
+                <span class="home-pool-pill-hot">赏金池</span>
+                <span class="home-pool-pill-soft">随时可接</span>
+              </div>
+            </div>
+            <picture>
+              <source type="image/webp" srcset="assets/pool-art.webp?v=opt1" />
+              <img class="home-pool-art" src="assets/pool-art.png?v=opt1" alt="" width="478" height="540" loading="lazy" decoding="async" fetchpriority="low" />
+            </picture>
+          </section>
+        </main>
+
+        <footer class="home-site-foot">
+          <h2 class="home-site-title">冲鸭兼职赚钱平台</h2>
+          <p class="home-site-lead">正规运营的悬赏任务平台，任务真实、赏金透明，零门槛赚零花</p>
+          <nav class="home-site-links" aria-label="网站信息">
+            <a href="agreement.html">用户协议</a>
+            <a href="privacy.html">隐私政策</a>
+            <a href="about.html">关于我们</a>
+            <a href="contact.html">联系方式</a>
+          </nav>
+          <p class="home-site-copy">©冲鸭 v3.1.1</p>
+          <p class="home-site-meta">开发商：江苏赞网云计算有限公司</p>
+          <p class="home-site-meta">苏ICP备2022047833号</p>
+        </footer>
+      </div>
+
+      <div class="home-fixed-bar">
+        <a class="home-fixed-cta" href="#">注册领5元新手任务</a>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
