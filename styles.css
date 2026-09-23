@@ -430,6 +430,10 @@ html:has(.home-body) {
   min-height: clamp(166px, 47cqi, 204px);
 }
 
+.home-card-pool {
+  min-height: clamp(186px, 52cqi, 224px);
+}
+
 .home-checkin-copy {
   position: absolute;
   left: 16px;
@@ -533,7 +537,8 @@ html:has(.home-body) {
 }
 
 .home-pool-copy {
-  max-width: 58%;
+  left: 16px;
+  max-width: 60%;
 }
 
 .home-withdraw-side {
@@ -720,18 +725,19 @@ html:has(.home-body) {
 }
 
 .home-pool-title {
-  font-size: clamp(16px, 4.8cqi, 18px);
+  font-size: clamp(18px, 5.4cqi, 22px);
   font-weight: 800;
-  line-height: 1.25;
+  line-height: 1.2;
+  white-space: nowrap;
 }
 
 .home-pool-amount {
-  margin: 6px 0 0;
+  margin: 4px 0 0;
   color: #ff7a00;
   font-weight: 800;
   line-height: 1.05;
-  letter-spacing: -0.02em;
-  font-size: 30px;
+  letter-spacing: -0.03em;
+  font-size: clamp(36px, 11cqi, 44px);
 }
 
 .home-pool-amount em {
@@ -741,11 +747,12 @@ html:has(.home-body) {
 }
 
 .home-pool-desc {
-  margin: 8px 0 0;
+  margin: 6px 0 0;
   color: #555555;
-  font-size: 13px;
-  font-weight: 500;
-  line-height: 1.4;
+  font-size: clamp(13px, 4cqi, 15px);
+  font-weight: 650;
+  line-height: 1.35;
+  white-space: nowrap;
 }
 
 .home-fixed-bar {
